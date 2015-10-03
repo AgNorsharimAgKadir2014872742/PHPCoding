@@ -1,0 +1,19 @@
+<?php
+
+$file = fopen("resume.bin","w");
+echo fwrite($file,"Mobile Phone: 019 7241388\n");
+echo fwrite($file,"E-mails: agnorsharim@gmail.com\n");
+echo fwrite($file,"Age: 24\n");
+echo fwrite($file,"Gender: Male\n");
+echo fwrite($file,"Matrix No: 2014872742\n");
+echo fwrite($file,"Name: AG NORSHARIM BIN AG KADIR\n");
+fclose($file);
+
+$file = fopen("resume.bin","r");
+
+$s = fread($file,filesize("resume.bin"));
+$list = new array($s);
+for ( int i = list.size()-1)
+echo "$s";
+fclose($file);
+?>
