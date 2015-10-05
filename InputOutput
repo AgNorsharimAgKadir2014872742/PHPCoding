@@ -1,19 +1,50 @@
-<?php
+php
 
-$file = fopen("resume.bin","w");
-echo fwrite($file,"Mobile Phone: 019 7241388\n");
-echo fwrite($file,"E-mails: agnorsharim@gmail.com\n");
-echo fwrite($file,"Age: 24\n");
-echo fwrite($file,"Gender: Male\n");
-echo fwrite($file,"Matrix No: 2014872742\n");
-echo fwrite($file,"Name: AG NORSHARIM BIN AG KADIR\n");
+$file = fopen("resume.bin","wb");
+
+//echo  fwrite($file,"Mobile Phone: 019 7241388\n");
+$char1 = "Mobile Phone: 019 7241388\n";
+$bin1 = decbin(ord($char1));
+echo fwrite($file, $bin1);
+echo fwrite($file, " \n");
+
+//echo  fwrite($file,"E-mails: agnorsharim@gmail.com\n");
+$char2 = "E-mails: agnorsharim@gmail.com\n";
+$bin2 = decbin(ord($char2));
+echo fwrite($file, $bin2);
+echo fwrite($file, " \n");
+
+//echo  fwrite($file,"Age: 24\n");
+$char3 = "Age: 24\n";
+$bin3 = decbin(ord($char3));
+echo fwrite($file, $bin3);
+echo fwrite($file, " \n");
+
+//echo  fwrite($file,"Gender: Male\n");
+$char4 = "Gender: Male\n";
+$bin4 = decbin(ord($char4));
+echo fwrite($file, $bin4);
+echo fwrite($file, " \n");
+
+//echo  fwrite($file,"Matrix No: 2014872742\n");
+$char5 = "Matrix No: 2014872742\n";
+$bin5 = decbin(ord($char5));
+echo fwrite($file, $bin5);
+echo fwrite($file, " \n");
+
+////echo fwrite($file,"Name: AG NORSHARIM BIN AG KADIR\n");
+$char6 = "Name: AG NORSHARIM BIN AG KADIR\n";
+$bin6 = decbin(ord($char6));
+echo fwrite($file, $bin6);
+
 fclose($file);
 
 $file = fopen("resume.bin","r");
-
-$s = fread($file,filesize("resume.bin"));
-$list = new array($s);
-for ( int i = list.size()-1)
-echo "$s";
+$bin = fread($file,filesize("resume.bin"));
+$char = chr(bindec($bin));
+//$list = new array($s);
+//for ( int i = list.size()-1)
+echo "$char";
 fclose($file);
+
 ?>
